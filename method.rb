@@ -58,3 +58,18 @@ str1 = "today is tuesday"
 str2 = "yesterday was monday"
 
 print str1 <=> str2
+
+
+# custom sorting
+def alphabetize(arr, rev = false)
+  if rev
+    arr.sort { |item1, item2| item2 <=> item1 }
+  else
+    arr.sort { |item1, item2| item1 <=> item2 }
+  end
+end
+
+books = ["the pragmatic programmer", "code complete", "harry potter"]
+
+puts "a-z #{alphabetize(books)}"
+puts "z-a #{alphabetize(books, true)}"
